@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from typing import List, Optional
 import os
+import json
 
 
 class Settings(BaseSettings):
@@ -45,6 +46,11 @@ class Settings(BaseSettings):
         env_file = ".env"
         env_file_encoding = "utf-8"
         extra = "ignore"
+
+    @property
+    def CORS_ORIGINS_LIST(self) -> List[str]:
+        """Convert CORS_ORIGINS from string to list"""
+        return json.loads(self.CORS_ORIGINS)
 
     @property
     def COOKIE_SECURE(self) -> bool:
