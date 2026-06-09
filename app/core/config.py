@@ -35,7 +35,7 @@ class Settings(BaseSettings):
 
     COOKIE_NAME: str = "access_token"
     COOKIE_HTTPONLY: bool = True
-    COOKIE_SAMESITE: str = "none"
+    COOKIE_SAMESITE: str = "lax"
 
     CORS_ORIGINS: str
     CORS_ALLOW_CREDENTIALS: bool = True
