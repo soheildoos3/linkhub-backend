@@ -35,9 +35,18 @@ def set_auth_cookies(
 
 
 def clear_auth_cookies(response: Response) -> None:
-    response.delete_cookie(settings.COOKIE_NAME, path="/")
-    response.delete_cookie("refresh_token", path="/")
-
+    response.delete_cookie(
+        key=settings.COOKIE_NAME,
+        path="/",
+        secure=settings.COOKIE_SECURE,
+        samesite=settings.COOKIE_SAMESITE,
+    )
+    response.delete_cookie(
+        key="refresh_token",
+        path="/",
+        secure=settings.COOKIE_SECURE,
+        samesite=settings.COOKIE_SAMESITE,
+    )
 
 def get_access_token_from_cookie(request: Request) -> str:
     token = request.cookies.get(settings.COOKIE_NAME)
