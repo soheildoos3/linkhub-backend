@@ -261,4 +261,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+<<<<<<< HEAD
 >>>>>>> d8bd1e0198b592863d2410636e8f97cff4f16d09
+=======
+>>>>>>> d8bd1e0 (Initial commit)
+>>>>>>> 943ce08
